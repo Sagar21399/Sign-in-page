@@ -47,4 +47,38 @@ This project demonstrates the development of a production-ready web application 
 
 ---
 
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/project-name.git
+cd project-name
+
 ## 📂 Project Structure
+
+# Backend
+cd backend
+npm install
+
+# Frontend
+cd ../frontend
+npm install
+
+.env
+
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+PORT=5000
+
+Run the application
+
+# Backend
+cd backend
+npm run dev
+
+# Frontend
+cd frontend
+npm start
+
