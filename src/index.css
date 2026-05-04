@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 30% 12%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 25% 18%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 25% 18%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 280 60% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 20% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 15% 30%;
+    --muted-foreground: 0 0% 80%;
+
+    --accent: 340 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100% / 0.15;
+    --input: 0 0% 100% / 0.1;
+    --ring: 280 60% 55%;
+
+    --radius: 1.25rem;
+
+    /* Glassmorphism tokens */
+    --glass-bg: 0 0% 100% / 0.08;
+    --glass-border: 0 0% 100% / 0.18;
+    --glass-shadow: 0 8px 32px 0 hsl(240 50% 5% / 0.4);
+
+    /* Brand gradients */
+    --gradient-bg: linear-gradient(135deg, hsl(280 50% 25%) 0%, hsl(340 60% 40%) 35%, hsl(220 50% 35%) 70%, hsl(240 40% 30%) 100%);
+    --gradient-button: linear-gradient(90deg, hsl(280 60% 45%) 0%, hsl(340 70% 55%) 50%, hsl(220 60% 50%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.15) 0%, hsl(0 0% 100% / 0.05) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid hsl(0 0% 100% / 0.4);
+    color: hsl(var(--foreground));
+    transition: border-color 0.3s ease;
+  }
+
+  .glass-input:focus {
+    outline: none;
+    border-bottom-color: hsl(0 0% 100% / 0.9);
+  }
+
+  .glass-input::placeholder {
+    color: hsl(0 0% 100% / 0.7);
+  }
+
+  .gradient-button {
+    background: var(--gradient-button);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px hsl(280 60% 30% / 0.5);
+  }
+
+  .gradient-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px hsl(280 60% 30% / 0.7);
+  }
+
+  .gradient-button:active {
+    transform: translateY(0);
+  }
+
+  .bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
